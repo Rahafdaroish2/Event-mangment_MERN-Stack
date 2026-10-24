@@ -1,0 +1,269 @@
+/* Color Palette */
+:root {
+  --primary: #b1378b;
+  --primary-light: #d7b2b7;
+  --secondary: #c9a0bf;
+  --dark: #261a22;
+  --accent: #a87ba2;
+  --light: #f3f2f4;
+  --lighter: #d5c1d9;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: all 0.3s ease;
+}
+
+.auth-container.light {
+  background: linear-gradient(135deg, var(--light) 0%, var(--lighter) 100%);
+}
+
+.auth-container.dark {
+  background: linear-gradient(135deg, var(--dark) 0%, #1a1015 100%);
+}
+
+.auth-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-form-wrapper.light {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.auth-form-wrapper.dark {
+  background: rgba(38, 26, 34, 0.95);
+}
+
+.auth-form-wrapper h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.auth-form-wrapper.light h1 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-form-wrapper.dark h1 {
+  color: var(--primary-light);
+}
+
+.auth-form-wrapper > p {
+  margin: 0 0 2rem 0;
+}
+
+.auth-form-wrapper.light > p {
+  color: #666;
+}
+
+.auth-form-wrapper.dark > p {
+  color: #aaa;
+}
+
+.auth-form-wrapper form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-form-wrapper.light .form-group label {
+  color: var(--dark);
+}
+
+.auth-form-wrapper.dark .form-group label {
+  color: var(--light);
+}
+
+.auth-form-wrapper.light input,
+.auth-form-wrapper.light select {
+  background: #f9f9f9;
+  color: var(--dark);
+  border: 2px solid var(--lighter);
+}
+
+.auth-form-wrapper.dark input,
+.auth-form-wrapper.dark select {
+  background: #2a1f29;
+  color: var(--light);
+  border: 2px solid #5a4a58;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(177, 55, 139, 0.2);
+}
+
+.form-group input::placeholder {
+  opacity: 0.7;
+}
+
+.role-selector {
+  display: flex;
+  gap: 1rem;
+}
+
+.role-selector label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 500;
+}
+
+.role-selector input[type="radio"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.error-message {
+  display: block;
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(177, 55, 139, 0.3);
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(177, 55, 139, 0.4);
+}
+
+.switch-form {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.auth-form-wrapper.light .switch-form {
+  color: #666;
+}
+
+.auth-form-wrapper.dark .switch-form {
+  color: #aaa;
+}
+
+.switch-form a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.switch-form a:hover {
+  color: var(--accent);
+}
+
+.auth-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-image::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.image-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+.image-content img {
+  height: 6rem;
+  margin: 0 0 1rem 0;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+}
+
+.image-content p {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .auth-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .auth-form-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .auth-form-wrapper form {
+    width: 100%;
+  }
+}

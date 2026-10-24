@@ -1,0 +1,252 @@
+
+#feedback {
+  padding: 2rem 1.5rem;
+  min-height: 40vh;
+}
+
+.feedback {
+  transition: all 0.3s ease;
+}
+
+.feedback.light {
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--card-light) 50%, var(--shadow-light) 100%);
+}
+
+.feedback.dark {
+  background: linear-gradient(135deg, var(--card-dark) 0%, var(--bg-dark) 50%, var(--shadow-dark) 100%);
+}
+
+.feedback-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feedback-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedback.light .feedback-container h2 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feedback.dark .feedback-container h2 {
+  color: var(--text-primary-dark);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.review-card {
+  padding: 2rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.review-card.light {
+  background: var(--card-light);
+  box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+.review-card.dark {
+  background: var(--card-dark);
+  box-shadow: 0 5px 20px var(--shadow-dark);
+}
+
+.review-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  font-size: 3rem;
+  min-width: 50px;
+}
+
+.reviewer-info h4 {
+  margin: 0 0 0.5rem 0;
+}
+
+.review-card.light .reviewer-info h4 {
+  color: var(--text-primary-light);
+}
+
+.review-card.dark .reviewer-info h4 {
+  color: var(--text-primary-dark);
+}
+
+.rating {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.star.filled {
+  color: var(--primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.comment {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.review-card.light .comment {
+  color: var(--text-secondary-light);
+}
+
+.review-card.dark .comment {
+  color: var(--text-secondary-dark);
+}
+
+.add-review-section {
+  text-align: center;
+}
+
+.btn-add-review {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(177, 55, 139, 0.3);
+}
+
+.btn-add-review:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(177, 55, 139, 0.4);
+}
+
+.review-form {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.review-form.light {
+  background: white;
+  box-shadow: 0 10px 40px rgba(177, 55, 139, 0.1);
+}
+
+.review-form.dark {
+  background: #3d2a35;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.review-form.light .form-group label {
+  color: var(--dark);
+}
+
+.review-form.dark .form-group label {
+  color: var(--light);
+}
+
+.review-form.light input,
+.review-form.light textarea {
+  background: #f9f9f9;
+  color: var(--dark);
+  border: 2px solid var(--lighter);
+}
+
+.review-form.dark input,
+.review-form.dark textarea {
+  background: #2a1f29;
+  color: var(--light);
+  border: 2px solid #5a4a58;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(177, 55, 139, 0.2);
+}
+
+.rating-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ddd;
+  transition: all 0.2s ease;
+}
+
+.star-btn:hover,
+.star-btn.selected {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(177, 55, 139, 0.3);
+}
+
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-container h2 {
+    font-size: 1.8rem;
+  }
+}

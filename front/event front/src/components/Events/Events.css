@@ -1,0 +1,238 @@
+
+#events {
+  padding: 2rem 1.5rem;
+}
+
+.events {
+  transition: all 0.3s ease;
+}
+
+.events.light {
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--card-light) 50%, var(--shadow-light) 100%);
+}
+
+.events.dark {
+  background: linear-gradient(135deg, var(--card-dark) 0%, var(--bg-dark) 50%, var(--shadow-dark) 100%);
+}
+
+.events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.events.light .events-container h2 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.events.dark .events-container h2 {
+  color: var(--text-primary-dark);
+}
+
+.horizontal-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  min-height: 420px;
+}
+
+.carousel-slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.slide-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.slide-image-wrapper:hover .slide-image {
+  transform: scale(1.05);
+}
+
+.event-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+}
+
+.event-badge.public {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.event-badge.private {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.slide-content h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.events.dark .slide-content h3 {
+  color: var(--text-primary-dark);
+}
+
+.slide-content .description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary-light);
+  margin: 0;
+}
+
+.events.dark .slide-content .description {
+  color: var(--text-secondary-dark);
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary-light);
+}
+
+.events.dark .detail-item {
+  color: var(--text-secondary-dark);
+}
+
+.detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(26, 188, 156, 0.1);
+  border-radius: 50%;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.detail-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-join {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-join:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+}
+
+.carousel-arrow {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(26, 188, 156, 0.3);
+  flex-shrink: 0;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.4);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.95);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(26, 188, 156, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--primary);
+  width: 30px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    width: 220px;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .events-container h2 {
+    font-size: 1.5rem;
+  }
+}

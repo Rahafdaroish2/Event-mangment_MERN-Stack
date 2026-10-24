@@ -1,0 +1,45 @@
+/* ReviewModal.css */
+.stars-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.star-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d5c1d9;
+  transition: all 0.2s;
+  font-size: 20px;
+}
+
+.modal-content.dark .star-button {
+  color: #a87ba2;
+}
+
+.modal-content.light .star-button {
+  color: #d5c1d9;
+}
+
+.star-button.filled {
+  color: #b1378b;
+}
+
+.star-button:hover:not(:disabled) {
+  transform: scale(1.2);
+  color: #b1378b;
+}
+
+.star-button:disabled {
+  cursor: default;
+}
+
+.star-button svg {
+  width: 20px;
+  height: 20px;
+}
